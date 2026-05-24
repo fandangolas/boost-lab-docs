@@ -2,7 +2,9 @@
 
 A Monte Carlo engine dyno simulator that tells you not just what your engine *might* make — but how confident you should be in that number.
 
-![BoostLab screenshot](https://raw.githubusercontent.com/fandangolas/boost-lab-docs/main/screenshot.png)
+This repository contains only the technical documentation, architectural designs, and mathematical modelling decisions for the **BoostLab** project. The implementation is in a private repository.
+
+![BoostLab screenshot](./docs/screenshot.png)
 
 ---
 
@@ -13,6 +15,13 @@ Every dyno calculator on the internet gives you a single number. A tuner knows t
 BoostLab runs hundreds of simulations in parallel, each one sampling a realistic spread of the variables a tuner actually moves — AFR/lambda, intake air temperature, ignition timing margin, boost target tolerance — and shows you the full distribution. The p10–p90 band on the dyno chart is the honest answer: *this is the range of outcomes you should expect across a real session.*
 
 It was built as a clean-room rewrite of an earlier prototype, collapsing a multi-service architecture into a single Rust binary that is easy to run, easy to understand, and fast enough to stream 300 live simulation curves to the browser in under two seconds.
+
+---
+
+## Documents
+
+- [**Architecture**](ARCHITECTURE.md) - Deep dive into the system design, communication protocols, and concurrency model.
+- [**Modelling**](MODELLING.md) - Detailed explanation of the physics engine, Heywood BMEP correlations, and Monte Carlo sampling logic.
 
 ---
 
